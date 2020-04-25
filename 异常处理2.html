@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+    <script>
+ //点击事件
+         document.getElementById("trans-btn").onclick = function () {
+             var x = document.getElementById("dec-number").value;
+             var y = document.getElementById("bin-bit").value;
+             dec2bin(x, y);
+         }
+ 
+         function dec2bin(decNumber, bit) {
+             // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+             if (decNumber < 0) {
+                 alert("请输入一个非负整数");
+             } else {
+                 var q = binary(decNumber, bit);
+                 document.getElementById("result").innerHTML = ("计算结果为：" + q);
+             }
+         }
+ 
+         // 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+         // Some coding
+ 
+         function binary(num, Bits) {
+             var resArry = [];
+             var xresArry = [];
+             i = 0;
+             //除2取余
+             for (; num > 0;) {
+                 resArry.push(num % 2);
+                 num = parseInt(num / 2);
+                 i++;
+             }
+             //倒序排列
+             for (j = i - 1; j >= 0; j--) {
+                 xresArry.push(resArry[j]);
+             }
+             //报错
+             if (Bits < xresArry.length) {
+                 console.log("控制位小于转换位数");
+             }
+             //补0操作
+             if (Bits) {
+                 for (r = xresArry.length; r < Bits; r++) {
+                     xresArry.unshift("0");
+                 }
+             }
+             return xresArry.join().replace(/,/g, "");
+         }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>小游戏2</title>
+	<style>
+            td {
+                width: 200px;
+                height: 40px;
+                border: 1px solid #CCCCCC;
+            }
+            tr {
+                text-align: center;
+            }
+        </style>
+</head>
+<body>
+	 <table>
+            <th>九九乘法表</th>
+     </table>
+        
+        <script>
+            
+            for(var i=1;i<=9;i++){
+                var str="";
+                var arr=[];
+                var tr=document.createElement("tr"); //用createElement函数来动态创建table
+                for(var j=1;j<=i;j++){
+                    str=i+"*"+j+"="+i*j;
+                    arr.push(str);
+                    //push() 方法主要用于向数组的末尾添加一个或多个元素，其返回值为添加后新的长度，即push后的数组长度，该值为number类型。
+					// 注意：
+				  // 1.一定是在数组的末尾添加
+				 // 2.该方法会改变原数组的长度
+				// 3.如果需要在数组起始位置添加元素请使用 unshift() 方法
+
+                    var td=document.createElement("td");  //用createElement函数来动态创建table
+                    tr.appendChild(td);  //使用appendChild 给table 增加tr td
+
+                    td.innerHTML=arr[j-1]; //注意这里是j-1 因为当i=1 j=1的时候 由于 arr[1]不存在  所以会报错
+                    //console.log(str);把每次内部循环的结果也都输出了 第一行：3*1=3  第二行：3*1=3 3*2=6  第三行：3*1=3 3*2=6 3*3=9
+                }
+//                
+//                console.log(str); //将一次外循环作为一次输出
+                var table=document.getElementsByTagName("table")[0];
+                table.appendChild(tr);
+            }
+                    
+        </script>
+
+</body>
+</html>

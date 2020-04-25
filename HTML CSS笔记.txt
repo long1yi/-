@@ -1,0 +1,48 @@
+HTML标签参考手册 https://www.w3school.com.cn/tags/index.asp https://www.w3school.com.cn/tags/html_ref_byfunc.asp
+css属性： https://www.w3school.com.cn/cssref/index.asp#box
+CSS字体：https://developer.mozilla.org/zh-CN/docs/Learn/CSS/为文本添加样式/Fundamentals serif :有衬线的字体 （衬线一词是指字体笔画尾端的小装饰，存在于某些印刷体字体中） sans-serif :没有衬线的字体。 monospace : 每个字符具有相同宽度的字体，通常用于代码列表。 cursive :用于模拟笔迹的字体，具有流动的连接笔画。 fantasy :用来装饰的字体
+字体栈: 无法保证你想在你的网页上使用的字体的可用性 (甚至一个网络字体可能由于某些原因而出错), 你可以提供一个字体栈 (font stack)，这样的话，浏览器就有多种字体可以选择了。只需包含一个font-family属性，其值由几个用逗号分离的字体名称组成。比如 p { font-family: "Trebuchet MS", Verdana, sans-serif; } 注意: 有一些字体名称不止一个单词，比如Trebuchet MS ，那么就需要用引号包裹。
+字体大小：font-size: 单位：1.px : 绝对单位，赋予文本；2.em : 可调节任何东西的大小，一个单位均为em的网站维护更简单。BUT：1em 等于我们设计的当前元素的父元素上设置的字体大小 (更加具体的话，比如包含在父元素中的大写字母 M 的宽度) 如果你有大量设置了不同字体大小的嵌套元素，这可能会变得棘手！
+一个简单的 size 示例： 当调整你的文本大小时，将文档(document)的基础 font-size 设置为10px往往是个不错的主意，这样之后的计算会变得简单，所需要的 (r)em 值就是想得到的像素的值除以 10，而不是 16。做完这个之后，你可以简单地调整在你的 HTML 中你想调整的不同类型文本的字体大小。在样式表的指定区域列出所有font-size的规则集是一个好主意，这样它们就可以很容易被找到。
+font-style: normal:普通字体； italic: 斜体； oblique:斜体字的模拟版本，当italic不可用时用于代替；
+font-weight :设置文字粗体大小； normal,bold:普通或加粗； 100–900: 数值粗体值，如果需要，可提供比上述关键字更精细的粒度控制。
+text-transform: 允许你设置要转换的字体。 none: 防止任何转型。 uppercase: 将所有文本转为大写。 lowercase: 将所有文本转为小写。 capitalize: 转换所有单词让其首字母大写。 full-width: 将所有字形转换成全角，即固定宽度的正方形，类似于等宽字体，允许拉丁字符和亚洲语言字形（如中文，日文，韩文）对齐。
+text-decoration: 设置/取消字体上的文本装饰 (你将主要使用此方法在设置链接时取消设置链接上的默认下划线。) 可用值为： none: 取消已经存在的任何文本装饰。 underline: 文本下划线. overline: 文本上划线 line-through: 穿过文本的线 strikethrough over the text.
+背景 background： 属性： CSS背景：https://www.w3school.com.cn/css/css_background.asp background-color：背景色，建议加上，作为后备，以防背景图像无法加载 background-image：背景图像 如果需要设置一个背景图像，必须为这个属性设置一个 URL 值：body {background-image: url(/i/eg_bg_04.gif);}。 渐变: linear-gradient(to 渐变的方向,开始的颜色,结尾的颜色)。渐变可以在中途选择其他的点 background-repeat：背景重复：repeat(默认)、repeat-x：在x方向重复、repeat-y在y方向重复、no-repeat：不重复 background-position:背景定位 ： 关键词：top、bottom、left、right 和 center。通常，这些关键字会成对出现，不过也不总是这样。 百分数值：百分数值同时应用于元素和图像。也就是说，图像中描述为 50% 50% 的点（中心点）与元素中描述为 50% 50% 的点（中心点）对齐。如果图像位于 0% 0%，其左上角将放在元素内边距区的左上角。如果图像位置是 100% 100%，会使图像的右下角放在右边距的右下角。 长度值：如 100px 或 5cm。 坐标系为x坐标从左到右，y坐标从上到下；可用于雪碧图。 background-attachment:背景附着，scroll（默认）、fixed：不会受到滚动的影响。 background-size:背景图像大小，长度值、百分数值、cover、contain background:背景简写，可按任意顺序放置
+边框 border： 模型：https://www.w3school.com.cn/css/css_boxmodel.asp 属性：CSS边框：https://www.w3school.com.cn/css/css_border.asp border：边框简写，[border-width border-style border-color /inherit]。三角形和梯形可以使用border+transparent来做 border-style：边框样式，none、hidden、dotted、dashed、solid、double、(groove、ridge、inset、outset、)inherit 注意：border-style 默认值是 none，这意味着如果您只修改 border-width 和 border-color 是不会出现边框的。 border-width：边框宽度，不支持百分比、默认为medium(3px) border-color：边框颜色，透明:transparent，默认颜色同color border-radius：边界圆角
+列表 list： 属性： list-style-type：列表标志，标志值。参考链接：https://www.w3school.com.cn/tiy/t.asp?f=csse_list-style-type_test list-style-image：列表项图像，url()，可用background代替 list-style-position：列表项位置，inside(文本内文本环绕)、outside(默认)、inherit list-style：列表简写，顺序:list-style-type list-style-position list-style-image(可省略某个值)
+连接 a： 根据所处状态决定样式 a:link {color:#FF0000;} /* 未被访问的链接 / a:visited {color:#00FF00;} / 已被访问的链接 / a:hover {color:#FF00FF;} / 鼠标指针移动到链接上 / a:active {color:#0000FF;} / 正在被点击的链接 */ 注意: 一定要按照LVHA的顺序指定！可用background为连接增加小图标
+制作导航栏：https://www.runoob.com/css/css-navbar.html
+Parts of a box: https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#box-dimensions ~Content box:The area where your content is displayed, which can be sized using properties like width and height. ~Padding box: The padding sits around the content as white space; its size can be controlled using padding and related properties. 顺序： padding-top, padding-right, padding-bottom, and padding-left. 例子：/* Apply to all four sides */ padding: 1em;
+        /* vertical | horizontal */   padding: 5% 10%;
+
+  /* top | horizontal | bottom */   padding: 1em 2em 2em;
+
+    /* top | right | bottom | left */   padding: 5px 1em 0 2em;
+
+  /* Global values */
+		padding: inherit;
+		padding: initial;
+		padding: unset;
+~Border box: The border box wraps the content and any padding. Its size and style can be controlled using border and related properties. border: solid;border: dashed red;border: 1rem solid;border: thick double #32a1ce;border: 4mm ridge rgba(170, 50, 220, .6); The outline CSS property is a shorthand to set various outline properties in a single declaration: outline-style, outline-width, and outline-color. outline: thick double #32a1ce; outline: 8px ridge rgba(170, 50, 220, .6);border-radius: 2rem; Outlines never take up space, as they are drawn outside of an element's content. /* style */ outline: solid;
+	  /* color | style */   outline: #f66 dashed;
+
+	/* style | width */    outline: inset thick;
+
+      /* color | style | width */   outline: green solid 3px;
+
+    /* Global values */
+			outline: inherit;
+			outline: initial;
+ 			outline: unset;
+~Margin box:最外层，透明； box从内到外：content->paddind->border->margin;
+max-width:30px;段落最大宽度； margin 简写属性在一个声明中设置所有外边距属性。该属性可以有 1 到 4 个值，从上外边距 (top) 开始围着元素顺时针旋转 围绕在元素边框的空白区域是外边距。设置外边距会在元素外创建额外的“空白”。 margin 属性，这个属性接受任何长度单位、百分数值甚至负值，像素、英寸、毫米或 em。 如果缺少左外边距的值，则使用右外边距的值。 如果缺少下外边距的值，则使用上外边距的值。 如果缺少右外边距的值，则使用上外边距的值。 实例：margin:10px 5px 15px 20px; 上外边距是 10px 右外边距是 5px 下外边距是 15px 左外边距是 20px margin:10px 5px 15px; 上外边距是 10px 右外边距和左外边距是 5px 下外边距是 15px margin:10px 5px; 上外边距和下外边距是 10px 右外边距和左外边距是 5px margin:10px; 所有 4 个外边距都是 10px
+一个外部元素来包含其内容，并让我们一次操作它的所有内容。在这个例子中，
+、 文章杂志、 无特定语义，常含一个标题、和 可单独拆分，与页面其余部分无关，诸如此类。 
+table:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption 
+Month 把 th 元素标识为列的表头 2 把 td 元素标识为行的表头 使用 scope 属性，可以将数据单元格与表头单元格联系起来。 通过属性值 row，表头行包括的所有表格都将和表头单元格联系起来。指定 col，会将当前列的所有单元格和表头单元格绑定起来。 
+CSS布局：http://zh.learnlayout.com/ margin: auto; #main { width: 600px; margin: 0 auto; }
+设置块级元素的 width 可以防止它从左到右撑满整个容器。然后你就可以设置左右外边距为 auto 来使其水平居中。元素会占据你所指定的宽度，然后剩余的宽度会一分为二成为左右外边距。 
+#main { max-width: 600px; margin: 0 auto; }
+在这种情况下使用 max-width 替代 width 可以使浏览器更好地处理小窗口的情况。这点在移动设备上显得尤为重要 
+当你设置一个元素为 box-sizing: border-box; 时，此元素的内边距和边框不再会增加它的宽度。 box-sizing 是个很新的属性，目前你还应该像下面例子中那样使用 -webkit- 和 -moz- 前缀。这可以启用特定浏览器实验中的特性。 -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; 布局：Position:重点 http://zh.learnlayout.com/position.html absolute ： absolute 是最棘手的position值。 absolute 与 fixed 的表现类似，但是它不是相对于视窗而是相对于最近的“positioned”祖先元素。如果绝对定位（position属性的值为absolute）的元素没有“positioned”祖先元素，那么它是相对于文档的 body 元素，并且它会随着页面滚动而移动。记住一个“positioned”元素是指 position 值不是 static 的元素。

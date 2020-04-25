@@ -1,0 +1,3 @@
+好看的网页内附代码： http://2014.artsy.net/ https://codepen.io/Yakudoo/full/rJjOJx https://codepen.io/pissang/full/geajpX https://codepen.io/tsuhre/full/BYbjyg https://wangyasai.github.io/Stars-Emmision/ https://pissang.github.io/papercut-box-art/ https://demo.marpi.pl/biomes/ https://pissang.github.io/voxelize-image/ http://echarts.baidu.com/examples/index.html#chart-type-globe https://tympanus.net/Development/AudioVisualizers/（推荐戴耳机）
+WEB学习资料： http://ife.baidu.com/course/detail/id/28 中文字链接 Web 建站技术中，HTML、HTML5、XHTML、CSS、SQL、JavaScript、PHP、ASP.NET、Web Services 是什么？ W3School的HTML教程 W3School的HTML5教程 MDN Web开发入门
+2020-03-25 认识了解 html css js 已达成 进一步确认HTML 与 JS 与 CSS之间的联系 了解Github 和 VSC开发工具 JS代码需要深入学习 Flag:坚持一起学习
