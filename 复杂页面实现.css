@@ -27,9 +27,18 @@ h6,p{
 	overflow: hidden;
 	background:rgb(34,44,60);
 }
+
 .third-column{
 	height:100%;
 	width: calc(100% - 350px);
+	 /*calc()就是实现自适应的布局 【当然一般想的是box-sizing,要开始回想了，在文章后赶紧做点笔记吧】
+					calc可以理解是个function(),它可以给元素的border、margin、pading、font-size和width等属性设置动态值
+						calc()运算规则：
+							使用“+”、“-”、“*” 和 “/”四则运算；
+								可以使用百分比、px、em、rem等单位；
+									可以混合使用各种单位进行计算；
+										表达式中有“+”和“-”时，其前后必须要有空格，如"widht: calc(12%+5em)"这种没有空格的写法是错误的；
+											表达式中有“*”和“/”时，其前后可以没有空格，但建议留有空格。*/
 	background:orange;
 }
 /*浮动布局*/
@@ -51,8 +60,10 @@ h6,p{
 .first-column .nav li{
 	margin:20px 0;
 }
-.first-column .nav li:hover,.first-column .more img:hover{
+.first-column .nav li:hover,.first-column .more img:hover{  
+	/*当鼠标放到li标签和下方图片上时作出相应变化*/
 	cursor: pointer;
+	 /*cursor规则是设定网页浏览时用户鼠标指针的样式,也就是鼠标的图形形状cursor:pointer设定鼠标的形状为一只伸出食指的手*/
 }
 .first-column .more{
 	width:100%;
