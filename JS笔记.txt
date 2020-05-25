@@ -1,0 +1,322 @@
+JS：https://www.w3school.com.cn/js/js_examples.asp
+提示：把脚本置于 <body> 元素的底部，可改善显示速度，因为脚本编译会拖慢显示。
+
+JavaScript 文件的文件扩展名是 .js。
+如需使用外部脚本，请在 <script> 标签的 src (source) 属性中设置脚本的名称：
+	实例：<script src="myScript.js"></script>
+
+您可以在 <head> 或 <body> 中放置外部脚本引用。
+该脚本的表现与它被置于 <script> 标签中是一样的。
+注释：外部脚本不能包含 <script> 标签。
+
+JavaScript 显示方案：
+-JavaScript 能够以不同方式“显示”数据：
+--使用 window.alert() 写入警告框
+--使用 document.write() 写入 HTML 输出；提示：document.write() 方法仅用于测试。注意：在 HTML 文档完全加载后使用 document.write() 将删除所有已有的 HTML 
+--使用 innerHTML 写入 HTML 元素
+--使用 console.log() 写入浏览器控制台
+
+如需访问 HTML 元素，JavaScript 可使用 document.getElementById(id) 方法。
+--id 属性定义 HTML 元素。--innerHTML 属性定义 HTML 内容。
+
+分号分隔 JavaScript 语句。
+请在每条可执行的语句之后添加分号； 如果有分号分隔，允许在同一行写多条语句；
+
+隐藏元素："document.getElementById('demo').style.display='none'"
+改变HTML内容：'document.getElementById("demo").innerHTML = "Hello JavaScript!"'
+改变HTML属性值："document.getElementById('myImage').src='/i/eg_bulbon.gif'"
+显示隐藏的元素："document.getElementById('demo').style.display='block'"
+
+Javascript 对大小写敏感
+JavaScript 注释：//4335467
+
+实例：
+1111111	<script>
+	// 创建对象：
+	var person = {
+ 	   firstName: "Bill",
+ 	   lastName : "Gates",
+	    id       : 12345,
+ 	   fullName : function() {
+ 	      return this.firstName + " " + this.lastName;
+ 	   }
+	};
+
+	// 显示对象中的数据：
+	document.getElementById("demo").innerHTML = person.fullName();
+	</script>
+
+22222 <script>
+	// 创建对象：
+	var person = {
+	    firstName: "Bill",
+ 	   lastName : "Gates",
+  	  id       :  12345
+	};
+
+	// 显示对象中的数据：
+	document.getElementById("demo").innerHTML =
+	person["firstName"] + " " + person["lastName"];
+	</script>
+
+异常处理：https://www.w3school.com.cn/js/js_if_else.asp
+if-else：
+--实例：
+111111	<script>
+	if (new Date().getHours() < 18) {
+  	document.getElementById("demo").innerHTML = "美好的一天！";
+	}
+	</script>
+
+222222  <script>
+	function myFunction() {
+ 	 var greeting;
+  	var time = new Date().getHours();
+  	if (time < 10) {
+   	 greeting = "早安";
+ 	 } else if (time < 20) {
+  	  greeting = "日安";
+ 	 } else {
+  	  greeting = "晚安";
+  	}
+ 	 document.getElementById("demo").innerHTML = greeting;
+	}
+	</script>
+
+33带链接：<script>
+	function myFunction() {
+  	var greeting;
+  	var time = new Date().getHours();
+  	if (time < 10) {
+   	 greeting = "早安";
+ 	 } else if (time < 20) {
+   	 greeting = "日安";
+  	} else {
+  	  greeting = "晚安";
+  	}
+ 	 document.getElementById("demo").innerHTML = greeting;
+	}
+	</script>
+
+当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model）。
+	HTML DOM 模型被结构化为对象树：
+	通过这个对象模型，JavaScript 获得创建动态 HTML 的所有力量：
+	JavaScript 能改变页面中的所有 HTML 元素
+	JavaScript 能改变页面中的所有 HTML 属性
+	JavaScript 能改变页面中的所有 CSS 样式
+	JavaScript 能删除已有的 HTML 元素和属性
+	JavaScript 能添加新的 HTML 元素和属性
+	JavaScript 能对页面中所有已有的 HTML 事件作出反应
+	JavaScript 能在页面中创建新的 HTML 事件
+
+查找 HTML 元素
+
+document.getElementById(id)     通过元素 id 来查找元素
+document.getElementsByTagName(name)    通过标签名来查找元素
+document.getElementsByClassName(name)    通过类名来查找元素
+
+
+例： function findAllHtmlSpanInOneSection(sectionId) {
+
+        // 返回某个section下所有span中内容为HTML的span标签
+
+        var obj = document.getElementById(sectionId).getElementsByTagName("span");
+
+        var str = [];
+ 
+        var i = 0;
+ 
+        for(i = 0;i<obj.length;i++)
+
+        {
+
+            if(obj[i].innerHTML == "HTML") 
+ 
+            {
+
+                str.push(obj[i].innerHTML);
+
+            }
+ 
+        }
+ 
+        alert(str);
+ 
+    }
+
+改变 HTML 元素
+
+element.innerHTML = new html content   改变元素的 inner HTML
+element.attribute = new value    改变 HTML 元素的属性值
+element.setAttribute(attribute, value)    改变 HTML 元素的属性值
+element.style.property = new style    改变 HTML 元素的样式
+
+添加和删除元素
+
+document.createElement(element)   创建 HTML 元素
+document.removeChild(element)   删除 HTML 元素
+document.appendChild(element)   添加 HTML 元素
+document.replaceChild(element)    替换 HTML 元素
+document.write(text)    写入 HTML 输出流
+
+添加事件处理程序
+
+document.getElementById(id).onclick = function(){code}      向 onclick 事件添加事件处理程序
+
+HTML DOM 允许 JavaScript 对 HTML 事件作出反应：
+·当用户点击鼠标时
+·当网页加载后
+·当图像加载后
+·当鼠标移至元素上时
+·当输入字段被改变时
+·当 HTML 表单被提交时
+·当用户敲击按键时
+
+
+overflow 属性：
+·visible   默认值。内容不会被修剪，会呈现在元素框之外。
+·hidden   内容会被修剪，并且其余内容是不可见的。
+·scroll    内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
+·auto    如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。
+·inherit   规定应该从父元素继承 overflow 属性的值。
+
+
+onchange 事件经常与输入字段验证结合使用。
+下面是一个如何使用 onchange 的例子。当用户改变输入字段内容时，会调用 upperCase() 函数。
+实例：
+<input type="text" id="fname" onchange="upperCase()">
+
+
+onmouseover 和 onmouseout 事件可用于当用户将鼠标移至 HTML 元素上或移出时触发某个函数：
+<div onmouseover="mOver(this)" onmouseout="mOut	(this)"
+style="backgroundcolor:#D94A38;width:120px;height:20px;padding:40px;">
+请把鼠标移上来</div>
+
+<script>
+function mOver(obj) {
+  obj.innerHTML = "谢谢您"
+}
+
+function mOut(obj) {
+  obj.innerHTML = "请把鼠标移上来"
+}
+</script>
+
+
+onmousedown, onmouseup 以及 onclick 事件：
+onmousedown, onmouseup 以及 onclick 事件构成了完整的鼠标点击事件。
+首先当鼠标按钮被点击时，onmousedown 事件被触发；然后当鼠标按钮被释放时，onmouseup 事件被触发；最后，当鼠标点击完成后，onclick 事件被触发。
+
+鼠标事件
+当指针移动到元素上时改变其颜色。
+<h1 onmouseover="style.color='red'"
+onmouseout="style.color='black'">
+
+
+JavaScript HTML DOM 事件监听器：
+·此示例使用 addEventListener() 方法将 click 事件附加到按钮。
+document.getElementById("myBtn").addEventListener("click", displayDate);
+
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+方法为元素附加事件处理程序而不会覆盖已有的事件处理程序。
+您能够向一个元素添加多个事件处理程序。
+您能够向一个元素添加多个相同类型的事件处理程序，例如两个 "click" 事件。
+您能够向任何 DOM 对象添加事件处理程序而非仅仅 HTML 元素，例如 window 对象。
+语法
+element.addEventListener(event, function, useCapture);
+第一个参数是事件的类型（比如 "click" 或 "mousedown"）。
+第二个参数是当事件发生时我们需要调用的函数。
+第三个参数是布尔值，指定使用事件冒泡还是事件捕获。此参数是可选的。
+注意：请勿对事件使用 "on" 前缀；请使用 "click" 代替 "onclick"。
+
+改变 HTML 样式
+如需更改 HTML 元素的样式，请使用此语法：
+document.getElementById(id).style.property = new style
+
+Visibility
+如何使元素不可见。
+·onclick="document.getElementById('p1').style.visibility='hidden'"
+·onclick="document.getElementById('p1').style.visibility='visible'"
+
+JavaScript 变量：
+JavaScript 变量是存储数据值的容器。
+所有 JavaScript 变量必须以唯一的名称的标识。
+这些唯一的名称称为标识符。
+名称可包含字母、数字、下划线和美元符号
+名称必须以字母开头
+名称也可以 $ 和 _ 开头（但是在本教程中我们不会这么做）
+名称对大小写敏感（y 和 Y 是不同的变量）
+保留字（比如 JavaScript 的关键词）无法用作变量名称
+
+JavaScript 中的“等于”运算符是 ==。
+字符串被包围在双引号或单引号中。数值不用引号。
+如果把数值放在引号中，会被视作文本字符串。
+
+如果把要给数值放入引号中，其余数值会被视作字符串并被级联。
+相加 "8" + 3 + 5 的结果是：835
+相加 3 + 5 + "8" 的结果是：88
++= 赋值运算符也可用于相加（级联）
+txt1 = "Hello ";  txt1 += "Kitty!";  txt1 的结果将是：Hello Kitty!
+对数字和字符串相加，会返回字符串。
+
+等值运算符
+					
+	==（相等）			
+			比较两个操作数的值是否相等
+			
+		
+	!=（不想等）					
+			比较两个操作数的值是否不相等
+			
+		
+	===（恒等）					
+			比较两个操作数的值是否相等，同时检测它们的类型是否相同
+			
+		
+	!==（不恒等）						
+			比较两个操作数的值是否不相等，同时检测它们的类型是否不相同
+			
+	js在比较的时候如果是 == 会先做类型转换，再判断值得大小，如果是===类型和值必须都相等。 
+
+
+可以使用 typeof 运算符来确定 JavaScript 变量的数据类型。
+typeof "Bill"                 // 返回 "string"
+typeof 3.14                   // 返回 "number"
+typeof NaN                    // 返回 "number"
+typeof false                  // 返回 "boolean"
+typeof [1,2,3,4]              // 返回 "object"
+typeof {name:'Bill', age:62}  // 返回 "object"
+typeof new Date()             // 返回 "object"
+typeof function () {}         // 返回 "function"
+typeof myCar                  // 返回 "undefined" *
+typeof null                   // 返回 "object"
+
+请注意：
+NaN 的数据类型是数值
+数组的数据类型是对象
+日期的数据类型是对象
+null 的数据类型是对象
+未定义变量的数据类型是 undefined
+尚未赋值的变量的数据类型也是 undefined
+您无法使用 typeof 去判断 JavaScript 对象是否是数组（或日期）。
+
+typeof 运算符不是变量。它属于运算符。运算符（比如 + - * /）没有数据类型。
+但是，typeof 始终会返回字符串（包含运算数的类型）。
+
+constructor 属性返回所有 JavaScript 变量的构造器函数。
+"Bill".constructor                 // 返回 "function String()  { [native code] }"
+(3.14).constructor                 // 返回 "function Number()  { [native code] }"
+false.constructor                  // 返回 "function Boolean() { [native code] }"
+[1,2,3,4].constructor              // 返回 "function Array()   { [native code] }"
+{name:'Bill', age:62}.constructor  // 返回" function Object()  { [native code] }"
+new Date().constructor             // 返回 "function Date()    { [native code] }"
+function () {}.constructor         // 返回 "function Function(){ [native code] }"
+
+您可以通过检查 constructor 属性来确定某个对象是否为数组（包含单词 "Array"）：
+或者更简单，您可以检查对象是否是数组函数：
+
+function isArray(myArray) {
+    return myArray.constructor === Array;
+}
